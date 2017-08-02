@@ -1,0 +1,286 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <script src="//cdn.optimizely.com/js/2899720567.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using single letter to name your variables &mdash; Python Anti-Patterns  documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/ribbon.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/font-awesome-4.1.0/css/font-awesome.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/menu.css" type="text/css" />
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Python Anti-Patterns  documentation" href="../index.html"/>
+        <link rel="up" title="Maintainability" href="index.html"/>
+        <link rel="next" title="Dynamically creating variable/method/function names" href="dynamically_creating_names.html"/>
+        <link rel="prev" title="Using the global statement" href="using_the_global_statement.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html"> Python Anti-Patterns</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../correctness/index.html"><i class="fa fa-check"></i> Correctness</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><i class="fa fa-puzzle-piece"></i> Maintainability</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="from_module_import_all_used.html">using wildcard imports (<cite>from … import *</cite>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="not_using_with_to_open_files.html">Not using <code class="docutils literal"><span class="pre">with</span></code> to open files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="returning_more_than_one_variable_type_from_function_call.html">Returning more than one variable type from function call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_the_global_statement.html">Using the <code class="docutils literal"><span class="pre">global</span></code> statement</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using single letter to name your variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamically_creating_names.html">Dynamically creating variable/method/function names</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../readability/index.html"><i class="fa fa-eye"></i> Readability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/index.html"><i class="fa fa-lock"></i> Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html"><i class="fa fa-dashboard"></i> Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html"><i class="fa fa-book"></i> Django</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+
+    <!-- Begin MailChimp Signup Form -->
+    <div class="nav-box">
+      <div id="mc_embed_signup">
+        <form action="http://quantifiedcode.us8.list-manage.com/subscribe/post?u=effb5c0618b377e47329ca7ba&amp;id=0eb810e227" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+            <label for="mce-EMAIL" style="color:#000;">Wanna learn more about Python code quality? Sign up for our newsletter!</label>
+            <input style="width:100%" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;"><input  type="text" name="b_effb5c0618b377e47329ca7ba_0eb810e227" tabindex="-1" value=""></div>
+            <div class="clear"><input style="width:100%" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+        </form>
+      </div>
+
+      <div class="social">
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/quantifiedcode/python-anti-patterns" data-icon="octicon-star" data-count-href="/quantifiedcode/python-anti-patterns/stargazers" data-count-api="/repos/quantifiedcode/python-anti-patterns#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star quantifiedcode/python-anti-patterns on GitHub">Star</a>
+
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="quantifiedcode">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+        <a href="https://twitter.com/quantifiedcode" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @quantifiedcode</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    <div>
+
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Python Anti-Patterns</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content" id="signup-box" >
+        <div class="rst-content">
+          <div class="navigation" role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Documentation</a> &raquo;</li>
+      
+          <li><a href="index.html"><i class="fa fa-puzzle-piece"></i> Maintainability</a> &raquo;</li>
+      
+    <li>Using single letter to name your variables</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/maintainability/using_single_letter_as_variable_name.rst.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="alert" style="text-align: center; background-color: rgb(255, 248, 189);">
+             <i class="fa fa-exclamation-circle"></i> Find more articles in our new <a id="signup-link" href="https://www.quantifiedcode.com/knowledge-base">Python Knowledge Base</a>
+            </div>
+            
+  <div class="section" id="using-single-letter-to-name-your-variables">
+<h1>Using single letter to name your variables<a class="headerlink" href="#using-single-letter-to-name-your-variables" title="Permalink to this headline">¶</a></h1>
+<p>Sometimes you see programmers trying to shorten the amount of text needed to write a piece of code, but when this goes to extremes, it will result in extremely ugly and unreadable code.</p>
+<div class="section" id="anti-pattern">
+<h2>Anti-pattern<a class="headerlink" href="#anti-pattern" title="Permalink to this headline">¶</a></h2>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;b&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;c&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;d&#39;</span><span class="p">}],</span> <span class="s1">&#39;texts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]}</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+            <span class="c1"># Do you know what are you iterating now?</span>
+            <span class="k">for</span> <span class="n">k2</span><span class="p">,</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">i</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">k2</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="best-practice">
+<h2>Best practice<a class="headerlink" href="#best-practice" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="use-more-verbose-names-for-your-variables-for-clarity">
+<h3>Use more verbose names for your variables for clarity<a class="headerlink" href="#use-more-verbose-names-for-your-variables-for-clarity" title="Permalink to this headline">¶</a></h3>
+<p>It is much better to write more text and to be much more precise about what each variable means.</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;b&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;c&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;d&#39;</span><span class="p">}],</span>
+    <span class="s1">&#39;texts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data_dict</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">data_item</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+            <span class="c1"># Do you know what are you iterating now?</span>
+            <span class="k">for</span> <span class="n">data_key</span><span class="p">,</span> <span class="n">data_value</span> <span class="ow">in</span> <span class="n">data_item</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">data_key</span><span class="p">,</span> <span class="n">data_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="status">
+<h2>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.quantifiedcode.com/app/pattern/3156948ad38447bd810ba158fa4f5f0e">Automated code check available</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <div class="alert" style="text-align: center; background-color: rgb(255, 248, 189);">
+             <i class="fa fa-exclamation-circle"></i> Find more articles in our new <a id="signup-link" href="https://www.quantifiedcode.com/knowledge-base">Python Knowledge Base</a>
+            </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dynamically_creating_names.html" class="btn btn-neutral float-right" title="Dynamically creating variable/method/function names"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="using_the_global_statement.html" class="btn btn-neutral" title="Using the global statement"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+    <!--End mc_embed_signup-->
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Last updated: Aug 02, 2017 
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51790189-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview', {
+       'page': location.pathname + location.search  + location.hash
+      });
+
+    </script> 
+
+  <!-- Place this tag right after the last button or just before your close body tag. -->
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+</body>
+</html>
