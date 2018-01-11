@@ -177,7 +177,7 @@
 <p>When a member needs to be slightly protected and cannot be simply exposed as a public member, use Python’s <code class="docutils literal"><span class="pre">property</span></code> decorator to accomplish the functionality of getters and setters.</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_length</span> <span class="o">=</span> <span class="n">length</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -230,7 +230,7 @@
   </div>
 
     <!--End mc_embed_signup-->
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Last updated: Aug 04, 2017 
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Last updated: Jan 11, 2018 
 </footer>
         </div>
       </div>

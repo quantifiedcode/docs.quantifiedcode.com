@@ -137,7 +137,7 @@
             
   <div class="section" id="no-exception-type-s-specified">
 <h1>No exception type(s) specified<a class="headerlink" href="#no-exception-type-s-specified" title="Permalink to this headline">¶</a></h1>
-<p>The function <cite>divide</cite> simply divides <cite>a</cite> by <cite>b</cite>. To avoid invalid calculations (e.g., a division by zero), a <cite>try-except</cite> block is added. This is valid and ensures that the function always returns a result. However, by securing your code with the try clause, you might hide actual programming errors, e.g., that you pass a string or an object as <cite>b</cite>, instead of a number. By not specifying an exception type, you do not only hide this error but you also lose information about the error itself.</p>
+<p>The function <cite>divide</cite> simply divides <cite>a</cite> by <cite>b</cite>. To avoid invalid calculations (e.g., a division by zero), a <cite>try-except</cite> block is added. This is valid and ensures that the function always returns a result. However, by securing your code with the try clause, you might hide actual programming errors, e.g., that you pass a string or an object as <cite>b</cite>, instead of a number. By not specifying an exception type, you not only hide this error but you also lose information about the error itself.</p>
 <div class="section" id="anti-pattern">
 <h2>Anti-pattern<a class="headerlink" href="#anti-pattern" title="Permalink to this headline">¶</a></h2>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -235,7 +235,7 @@
   </div>
 
     <!--End mc_embed_signup-->
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Last updated: Aug 04, 2017 
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Last updated: Jan 11, 2018 
 </footer>
         </div>
       </div>
